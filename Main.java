@@ -3,18 +3,22 @@
  */
 
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends ScanF {
 
 
     public static void main(String args[]){
         ScanF scanf = new ScanF();
-
-        System.out.println("Hello world");
-        //readStream();
-        //deviation();
+        Scanner scanner = new Scanner(System.in);
+        String filename = scanner.nextLine();
+        File file = new File(filename);
+        createFlyArray(file);
+        createFirstDwellArray(file);
+        createSecondDwellArray(file);
+        getT(createSecondDwellArray(file));
     }
 }
 
